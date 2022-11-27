@@ -4,12 +4,14 @@ import React from "react";
 export default function Skills() {
   return (
     <div>
-      <div>
-        <p className="mt-10 mb-4 text-2xl font-bold text-light">Skills</p>
-        <p className="mb-6 text-dark">
+      <div className="xl:mx-24">
+        <p className="mt-10 mb-4 text-2xl font-bold text-light sm:text-3xl lg:mt-24">
+          Skills
+        </p>
+        <p className="mb-6 text-dark sm:text-lg">
           For the past two years I have worked with and learned many skills:
         </p>
-        <ul className="mx-2 mt-4 grid grid-cols-2 text-light">
+        <ul className="mx-2 mt-4 grid grid-cols-2 text-light sm:text-lg md:grid-cols-4">
           <li className="mb-1.5 flex space-x-2">
             <CaretRight className="mt-1 h-5 w-5 flex-shrink-0 text-theme" />
             <span>JavaScript</span>

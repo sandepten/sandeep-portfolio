@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Dashboard from "../components/Dashboard";
@@ -17,15 +16,16 @@ export default function Home() {
         <meta name="description" content="Sandeep's portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <h1 className="text-3xl font-bold underline">Hello world!</h1> */}
       <Navbar />
-      <Dashboard />
-      <About />
-      <Work />
-      <MainProjects />
-      <OtherProjects />
-      <Contact />
-      <Footer />
+      <div className="px-6 xs:px-12 md:px-24 xl:px-36 2xl:mx-auto 2xl:w-3/5 2xl:px-0">
+        <Dashboard />
+        <About />
+        <Work />
+        <MainProjects />
+        <OtherProjects />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 }
