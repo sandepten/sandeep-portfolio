@@ -13,9 +13,9 @@ export default function Contact() {
         </p>
         <div className="mt-16 mb-32">
           <a href="mailto:sandepten@gmail.com" rel="noreferrer" target="_blank">
-            <b className="cursor-pointer border border-theme py-3 px-6 font-mono text-lg text-theme">
+            <button className="cursor-pointer border border-theme py-3 px-6 font-mono text-lg text-theme hover:bg-theme/30">
               Say Hello
-            </b>
+            </button>
           </a>
         </div>
       </div>

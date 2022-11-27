@@ -9,9 +9,10 @@ module.exports = [
     githubLink: "https://www.google.com",
   },
   {
-    name: "News app",
-    description: "A simple news app to read latest news",
-    stack: ["React", "CSS", "JavaScript"],
+    name: "Biowear - Ecommerce Website",
+    description:
+      "A ecommerce website built with Next.js and TailwindCSS. It includes a shopping cart, payment gateway and authentication using firebase.",
+    stack: ["Next.js", "TailwindCSS", "Firebase", "Stripe"],
     link: "https://www.google.com",
     githubLink: "https://www.google.com",
   },

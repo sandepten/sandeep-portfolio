@@ -35,7 +35,7 @@ export default function OtherProjects() {
                       {project.name}
                     </p>
                     <p className="pb-5 text-light">{project.description}</p>
-                    <p className="space-x-2 pb-10 text-light">
+                    <div className="space-x-2 pb-10 text-light">
                       {project.stack.map((st) => {
                         return (
                           <span
@@ -46,7 +46,7 @@ export default function OtherProjects() {
                           </span>
                         );
                       })}
-                    </p>
+                    </div>
                   </div>
                 </div>
               </a>
@@ -54,7 +54,7 @@ export default function OtherProjects() {
           );
         })}
         <div className="mt-16 flex justify-center">
-          <button className="border border-theme py-3 px-6 text-center font-mono text-lg text-theme">
+          <button className="border border-theme py-3 px-6 text-center font-mono text-lg text-theme hover:bg-theme/30">
             Show More
           </button>
         </div>
