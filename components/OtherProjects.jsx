@@ -16,7 +16,7 @@ export default function OtherProjects() {
         {projectData.map((project) => {
           return (
             <div key={project.name}>
-              <a href={project.link}>
+              <a href={project?.link}>
                 <div className="mb-3 rounded-sm bg-gray-900 py-10 px-5 sm:flex sm:h-full sm:flex-col sm:justify-between">
                   <div className="flex items-center justify-between pb-6">
                     <Folder size={40} color={theme} />
