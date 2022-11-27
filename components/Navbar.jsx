@@ -73,7 +73,7 @@ const Navbar = () => {
               setDropdown(false);
             }}
             size={38}
-            className="absolute right-8 top-8 z-30 text-light"
+            className="absolute right-8 top-8 z-30 cursor-pointer text-light"
           />
         ) : (
           <List
@@ -86,14 +86,19 @@ const Navbar = () => {
         )}
       </div>
       {dropdown ? (
-        <div className="absolute top-0 left-0 z-0 h-full w-full bg-slate-900 opacity-40"></div>
+        <div
+          onClick={() => {
+            setDropdown(false);
+          }}
+          className="absolute top-0 left-0 z-0 h-full w-full bg-slate-900 opacity-40"
+        ></div>
       ) : null}
       <div
-        className={`absolute right-0 top-0 z-20 flex h-screen w-3/4 transform flex-col items-center justify-center overflow-hidden bg-gray-900 md:hidden ${
+        className={`fixed right-0 top-0 z-20 flex h-screen w-3/4 transform flex-col items-center justify-center overflow-hidden bg-gray-900 sm:w-3/5 md:hidden ${
           dropdown ? "translate-x-0" : "translate-x-full"
         } duration-300 ease-in-out`}
       >
-        <ul className="-mt-12 flex flex-col space-y-12 font-medium text-light">
+        <ul className="-mt-20 flex flex-col space-y-14 text-lg font-medium text-light sm:-mt-12">
           <li
             onClick={() => {
               setDropdown(false);
