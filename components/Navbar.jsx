@@ -102,7 +102,7 @@ const Navbar = () => {
           <li
             onClick={() => {
               setDropdown(false);
-              window.scrollTo({ top: 900, left: 0, behavior: "smooth" });
+              window.scrollTo({ top: 800, left: 0, behavior: "smooth" });
             }}
             className="hover:text-theme"
           >
@@ -111,7 +111,7 @@ const Navbar = () => {
           <li
             onClick={() => {
               setDropdown(false);
-              window.scrollTo({ top: 1200, left: 0, behavior: "smooth" });
+              window.scrollTo({ top: 1400, left: 0, behavior: "smooth" });
             }}
             className="hover:text-theme"
           >
@@ -120,7 +120,7 @@ const Navbar = () => {
           <li
             onClick={() => {
               setDropdown(false);
-              window.scrollTo({ top: 1700, left: 0, behavior: "smooth" });
+              window.scrollTo({ top: 2000, left: 0, behavior: "smooth" });
             }}
             className="hover:text-theme"
           >
@@ -129,7 +129,7 @@ const Navbar = () => {
           <li
             onClick={() => {
               setDropdown(false);
-              window.scrollTo({ top: 2300, left: 0, behavior: "smooth" });
+              window.scrollTo({ top: 2700, left: 0, behavior: "smooth" });
             }}
             className="hover:text-theme"
           >
@@ -138,7 +138,7 @@ const Navbar = () => {
           <li
             onClick={() => {
               setDropdown(false);
-              window.scrollTo({ top: 4000, left: 0, behavior: "smooth" });
+              window.scrollTo({ top: 5000, left: 0, behavior: "smooth" });
             }}
             className="hover:text-theme"
           >

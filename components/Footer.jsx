@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="hidden h-20 border-r border-dark md:block"></div>
       </div>
       <a href="mailto:sandepten@gmail.com">
-        <div className="flex justify-between text-dark hover:text-theme xs:w-3/4 md:fixed md:-right-12 md:bottom-0 md:w-auto md:flex-col md:items-center md:space-y-28 xl:-right-8">
+        <div className="hidden justify-between text-dark hover:text-theme xs:w-3/4 md:fixed md:-right-12 md:bottom-0 md:flex md:w-auto md:flex-col md:items-center md:space-y-28 xl:-right-8">
           <span className="rotate-90">sandepten@gmail.com</span>
           <div className="hidden h-20 border-r border-dark md:block"></div>
         </div>
