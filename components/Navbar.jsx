@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { List, X } from "phosphor-react";
 import React, { useState } from "react";
 
@@ -5,14 +6,22 @@ const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
   return (
     <div>
-      <div className="hidden items-center justify-between px-10 py-7 font-mono font-medium md:flex xl:px-16">
-        <button className="relative w-fit rounded-full border-2 border-theme p-5">
+      <div className="fixed top-0 z-50 hidden w-full items-center justify-between bg-black px-10 py-7 font-mono font-medium md:flex xl:px-16">
+        <motion.button
+          onClick={() => {
+            setDropdown(false);
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+          }}
+          whileHover={{ scale: 1.1 }}
+          className="relative w-fit rounded-full border-2 border-theme p-5"
+        >
           <span className="absolute top-1 left-[0.9rem] text-2xl font-semibold text-theme">
             S
           </span>
-        </button>
+        </motion.button>
         <ul className="flex space-x-7 text-light xl:space-x-10 [&>*]:cursor-pointer">
-          <li
+          <motion.li
+            whileHover={{ scale: 1.1 }}
             onClick={() => {
               setDropdown(false);
               window.scrollTo({ top: 900, left: 0, behavior: "smooth" });
@@ -20,8 +29,9 @@ const Navbar = () => {
             className="hover:text-theme"
           >
             About
-          </li>
-          <li
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.1 }}
             onClick={() => {
               setDropdown(false);
               window.scrollTo({ top: 1200, left: 0, behavior: "smooth" });
@@ -29,8 +39,9 @@ const Navbar = () => {
             className="hover:text-theme"
           >
             Skills
-          </li>
-          <li
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.1 }}
             onClick={() => {
               setDropdown(false);
               window.scrollTo({ top: 1700, left: 0, behavior: "smooth" });
@@ -38,8 +49,9 @@ const Navbar = () => {
             className="hover:text-theme"
           >
             Experience
-          </li>
-          <li
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.1 }}
             onClick={() => {
               setDropdown(false);
               window.scrollTo({ top: 2300, left: 0, behavior: "smooth" });
@@ -47,8 +59,9 @@ const Navbar = () => {
             className="hover:text-theme"
           >
             Work
-          </li>
-          <li
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.1 }}
             onClick={() => {
               setDropdown(false);
               window.scrollTo({ top: 4000, left: 0, behavior: "smooth" });
@@ -56,7 +69,7 @@ const Navbar = () => {
             className="hover:text-theme"
           >
             Contact
-          </li>
+          </motion.li>
         </ul>
       </div>
 

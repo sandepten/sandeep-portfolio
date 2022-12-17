@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Folder, GithubLogo, Link } from "phosphor-react";
 import React from "react";
 import projectData from "../utilities/otherProjectsData";
@@ -5,7 +6,13 @@ import { theme } from "../utilities/themeFunc";
 
 export default function OtherProjects() {
   return (
-    <div className="xl:mx-36 2xl:mx-28">
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, delay: 0.3 }}
+      viewport={{ once: true }}
+      className="xl:mx-36 2xl:mx-28"
+    >
       <div className="mb-16 text-center">
         <p className="text-2xl font-semibold text-light sm:text-3xl">
           Other Noteworthy Projects
@@ -58,6 +65,6 @@ export default function OtherProjects() {
           Show More
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
