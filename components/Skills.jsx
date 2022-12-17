@@ -1,10 +1,17 @@
+import { motion } from "framer-motion";
 import { CaretRight } from "phosphor-react";
 import React from "react";
 
 export default function Skills() {
   return (
     <div>
-      <div className="xl:mx-24">
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+        viewport={{ once: true }}
+        className="xl:mx-24"
+      >
         <p className="mt-10 mb-4 text-2xl font-bold text-light sm:text-3xl lg:mt-24">
           Skills
         </p>
@@ -71,7 +78,7 @@ export default function Skills() {
             <span>Linux</span>
           </li>
         </ul>
-      </div>
+      </motion.div>
     </div>
   );
 }

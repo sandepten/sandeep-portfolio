@@ -1,10 +1,17 @@
+import { motion } from "framer-motion";
 import { CaretRight } from "phosphor-react";
 import React from "react";
 
 export default function Work() {
   return (
     <div>
-      <div className="mb-36 xl:mx-28 xl:mb-48">
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+        viewport={{ once: true }}
+        className="mb-36 xl:mx-28 xl:mb-48"
+      >
         <p className="mb-10 text-3xl font-bold text-light sm:text-4xl">
           Where I&apos;ve Worked
         </p>
@@ -59,7 +66,7 @@ export default function Work() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

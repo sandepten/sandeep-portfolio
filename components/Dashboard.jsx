@@ -1,9 +1,16 @@
+import { motion } from "framer-motion";
 import React from "react";
 
 export default function Dashboard() {
   return (
     <div>
-      <div className="mt-16 min-h-[80vh] sm:mt-24 md:mt-16 xl:mt-28">
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+        viewport={{ once: true }}
+        className="mt-16 min-h-[80vh] sm:mt-24 md:mt-[11rem] xl:mt-[13rem]"
+      >
         <p className="text-lg font-medium text-theme">Hi, my name is</p>
         <p className="py-2 text-4xl font-semibold text-white sm:py-4 sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5rem]">
           Sandeep Kumar.
@@ -23,11 +30,14 @@ export default function Dashboard() {
           </a>
         </p>
         <a href="/resume.pdf" rel="noreferrer" target="_blank">
-          <button className="mt-4 cursor-pointer border border-theme py-2 px-4 font-mono text-theme hover:bg-theme/30 sm:mt-8 sm:py-3 sm:px-5 lg:mt-4">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            className="mt-4 cursor-pointer border border-theme py-2 px-4 font-mono text-theme hover:bg-theme/20 sm:mt-8 sm:py-3 sm:px-5 lg:mt-4"
+          >
             Check out my resume!
-          </button>
+          </motion.button>
         </a>
-      </div>
+      </motion.div>
     </div>
   );
 }
