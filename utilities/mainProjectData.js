@@ -4,7 +4,7 @@ module.exports = [
     description:
       "A Netflix clone built with React, Redux, and Firebase. This project was built with the intention of learning how to use Redux and Firebase.",
     image: "sanflix.png",
-    link: "https://sanflix.vercel.app/",
+    link: "https://sanflix-netflix-clone.vercel.app/",
     stack: ["React", "Redux", "Firebase"],
     githubLink: "https://github.com/sandepten/sanflix-netflix-clone",
   },
