@@ -9,7 +9,7 @@ export default function Dashboard() {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.3 }}
         viewport={{ once: true }}
-        className="mt-16 min-h-[80vh] sm:mt-24 md:mt-[11rem] xl:mt-[13rem]"
+        className="pt-16 min-h-[100vh] sm:pt-24 md:pt-[11rem] xl:pt-[13rem]"
       >
         <p className="text-lg font-medium text-theme">Hi, my name is</p>
         <p className="py-2 text-4xl font-semibold text-white sm:py-4 sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5rem]">
