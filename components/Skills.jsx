@@ -276,7 +276,7 @@ export default function Skills() {
               <Sparkle className="text-secondary animate-pulse" size={20} />
             </div>
             <p className="text-muted max-w-2xl mx-auto leading-relaxed">
-              The tech landscape evolves rapidly, and I'm committed to continuous learning.
+              The tech landscape evolves rapidly, and I&apos;m committed to continuous learning.
               Currently exploring <span className="gradient-text font-semibold">advanced system design, AI/ML integration</span>,
               and contributing to high-impact open-source projects with <span className="gradient-text font-semibold">10K+ GitHub stars</span>.
             </p>

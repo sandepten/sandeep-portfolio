@@ -38,7 +38,7 @@ export default function Contact() {
         <motion.div variants={itemVariants} className="mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium mb-6">
             <Coffee className="text-theme animate-pulse" size={16} />
-            Let's grab a coffee
+            Let&apos;s grab a coffee
           </div>
         </motion.div>
 
@@ -53,9 +53,9 @@ export default function Contact() {
           variants={itemVariants}
           className="text-xl text-muted leading-relaxed mb-12 max-w-2xl mx-auto"
         >
-          I'm always excited about new opportunities and interesting projects.
+          I&apos;m always excited about new opportunities and interesting projects.
           Whether you have a question, want to collaborate, or just want to say
-          hello, I'd love to hear from you!
+          hello, I&apos;d love to hear from you!
         </motion.p>
 
         <motion.div variants={itemVariants} className="space-y-8">
@@ -68,7 +68,7 @@ export default function Contact() {
             </div>
 
             <p className="text-muted mb-8 leading-relaxed">
-              I'm currently working as a{" "}
+              I&apos;m currently working as a{" "}
               <span className="gradient-text font-semibold">
                 Software Developer at Reliance Jio
               </span>{" "}

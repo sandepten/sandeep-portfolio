@@ -49,7 +49,7 @@ export default function Dashboard() {
         </motion.div>
 
         <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
-          <span className="block text-light">Hello, I'm</span>
+          <span className="block text-light">Hello, I&apos;m</span>
           <span className="block gradient-text">Sandeep Kumar</span>
         </motion.h1>
 

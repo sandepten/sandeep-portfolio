@@ -161,7 +161,7 @@ export default function About() {
                     <p className="text-muted leading-relaxed group-hover:text-light transition-colors duration-300">
                       My journey into software development began during the COVID lockdown, when I discovered my passion for{" "}
                       <span className="gradient-text font-semibold">creating innovative digital solutions</span>.
-                      From learning through Harvard's CS50x to working with Fortune 500 companies.
+                      From learning through Harvard&apos;s CS50x to working with Fortune 500 companies.
                     </p>
                   </div>
                 </div>

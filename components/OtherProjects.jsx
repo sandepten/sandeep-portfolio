@@ -43,7 +43,7 @@ export default function OtherProjects() {
             <span className="gradient-text">Other Notable Projects</span>
           </h2>
           <p className="text-lg text-muted max-w-2xl mx-auto">
-            A collection of other projects I've worked on during my learning
+            A collection of other projects I&apos;ve worked on during my learning
             journey
           </p>
         </div>
