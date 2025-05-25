@@ -1,70 +1,160 @@
 import { motion } from "framer-motion";
-import { Folder, GithubLogo, Link } from "phosphor-react";
-import React from "react";
+import { Folder, GithubLogo, Link, ArrowUpRight } from "phosphor-react";
+import React, { useState } from "react";
 import projectData from "../utilities/otherProjectsData";
-import { theme } from "../utilities/themeFunc";
 
 export default function OtherProjects() {
+  const [showMore, setShowMore] = useState(false);
+  const displayedProjects = showMore ? projectData : projectData.slice(0, 6);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+  };
+
   return (
-    <motion.div
-      initial={{ y: 50, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7, delay: 0.3 }}
-      viewport={{ once: true }}
-      className="xl:mx-36 2xl:mx-28"
-    >
-      <div className="mb-16 text-center">
-        <p className="text-2xl font-semibold text-light sm:text-3xl">
-          Other Noteworthy Projects
-        </p>
-        <p className="text-lg text-theme sm:pt-3 sm:text-xl">View on GitHub</p>
-      </div>
-      <div className="sm:grid sm:grid-cols-2 sm:gap-3 lg:grid-cols-3">
-        {projectData.map((project) => {
-          return (
-            <div key={project.name}>
-              <a href={project?.link}>
-                <div className="mb-3 rounded-sm bg-gray-900 py-10 px-5 sm:flex sm:h-full sm:flex-col sm:justify-between">
-                  <div className="flex items-center justify-between pb-6">
-                    <Folder size={40} color={theme} />
-                    <div className="flex space-x-4">
-                      {project.githubLink.length > 0 ? (
-                        <a href={project.githubLink}>
-                          <GithubLogo size={32} color="#8892B0" />
-                        </a>
-                      ) : null}
-                      <Link size={32} color="#8892B0" />
-                    </div>
+    <section className="section-padding">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="max-w-7xl mx-auto"
+      >
+        <div className="text-center mb-20">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            <span className="gradient-text">Other Notable Projects</span>
+          </h2>
+          <p className="text-lg text-dark max-w-2xl mx-auto">
+            A collection of other projects I've worked on during my learning
+            journey
+          </p>
+        </div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {displayedProjects.map((project, index) => (
+            <motion.div
+              key={project.name}
+              variants={itemVariants}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="group"
+            >
+              <div className="glass-card p-8 rounded-2xl h-full flex flex-col hover:shadow-2xl hover:shadow-theme/10 transition-all duration-300 border-2 border-transparent hover:border-theme/30">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="p-3 rounded-xl bg-gradient-to-r from-theme/20 to-secondary/20 group-hover:from-theme/30 group-hover:to-secondary/30 transition-all duration-300">
+                    <Folder size={24} className="text-theme" />
                   </div>
-                  <div>
-                    <p className="pb-3 text-2xl font-semibold text-light">
-                      {project.name}
-                    </p>
-                    <p className="pb-5 text-light">{project.description}</p>
-                  </div>
-                  <div className="space-x-2 text-light">
-                    {project.stack.map((st) => {
-                      return (
-                        <span
-                          key={st}
-                          className="rounded-sm bg-gray-700 px-2 py-1 text-xs font-medium"
-                        >
-                          {st}
-                        </span>
-                      );
-                    })}
+
+                  <div className="flex items-center gap-3">
+                    {project.githubLink && (
+                      <motion.a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        whileHover={{ scale: 1.1, rotate: 12 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="p-2 rounded-lg hover:bg-white/10 transition-colors duration-200"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <GithubLogo
+                          size={20}
+                          className="text-dark hover:text-light"
+                        />
+                      </motion.a>
+                    )}
+
+                    {project.link && (
+                      <motion.a
+                        href={project.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        whileHover={{ scale: 1.1, rotate: 12 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="p-2 rounded-lg hover:bg-white/10 transition-colors duration-200"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <ArrowUpRight
+                          size={20}
+                          className="text-dark hover:text-light"
+                        />
+                      </motion.a>
+                    )}
                   </div>
                 </div>
-              </a>
-            </div>
-          );
-        })}
-      </div>
-      <div className="mt-16 mb-32 flex justify-center lg:mb-48 xl:mb-48">
-        <button className="border border-theme py-3 px-6 text-center font-mono text-lg text-theme hover:bg-theme/30">
-          Show More
-        </button>
-      </div>
-    </motion.div>
+
+                {/* Content */}
+                <div className="flex-grow">
+                  <h3 className="text-xl font-bold text-light mb-4 group-hover:text-theme transition-colors duration-200">
+                    {project.name}
+                  </h3>
+
+                  <p className="text-dark leading-relaxed mb-6 group-hover:text-light transition-colors duration-200">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 text-xs font-medium text-dark bg-white/5 rounded-full border border-white/10 group-hover:text-light group-hover:border-theme/30 transition-all duration-200"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-theme/5 to-secondary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Show More Button */}
+        {projectData.length > 6 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-16"
+          >
+            <motion.button
+              onClick={() => setShowMore(!showMore)}
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-3 px-8 py-4 glass-card text-light font-semibold rounded-xl hover:bg-white/20 transition-all duration-300 border-2 border-transparent hover:border-theme/30"
+            >
+              {showMore ? "Show Less" : "Show More Projects"}
+            </motion.button>
+          </motion.div>
+        )}
+      </motion.div>
+    </section>
   );
 }

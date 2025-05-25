@@ -1,165 +1,157 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { List, X } from "phosphor-react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = [
+    { name: "About", scroll: 900 },
+    { name: "Skills", scroll: 1200 },
+    { name: "Experience", scroll: 1700 },
+    { name: "Projects", scroll: 2300 },
+    { name: "Contact", scroll: 4000 },
+  ];
+
+  const scrollToSection = (scrollY) => {
+    setDropdown(false);
+    window.scrollTo({ top: scrollY, left: 0, behavior: "smooth" });
+  };
+
   return (
-    <div>
-      <div className="fixed top-0 z-50 hidden w-full items-center justify-between bg-black px-10 py-7 font-mono font-medium md:flex xl:px-16">
-        <motion.button
-          onClick={() => {
-            setDropdown(false);
-            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-          }}
-          whileHover={{ scale: 1.1 }}
-          className="relative w-fit rounded-full border-2 border-theme p-5"
-        >
-          <span className="absolute top-1 left-[0.9rem] text-2xl font-semibold text-theme">
+    <>
+      {/* Desktop Navbar */}
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+          scrolled
+            ? 'backdrop-blur-md bg-surface border-b border-white/10'
+            : 'bg-transparent'
+        }`}
+      >
+        <div className="hidden md:flex items-center justify-between px-8 lg:px-16 py-6">
+          <motion.button
+            onClick={() => scrollToSection(0)}
+            whileHover={{ scale: 1.1, rotate: 360 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 300, damping: 10 }}
+            className="relative w-12 h-12 rounded-full bg-gradient-to-r from-theme to-secondary flex items-center justify-center font-bold text-white shadow-lg shadow-theme/25"
+          >
             S
-          </span>
-        </motion.button>
-        <ul className="flex space-x-7 text-light xl:space-x-10 [&>*]:cursor-pointer">
-          <motion.li
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              setDropdown(false);
-              window.scrollTo({ top: 900, left: 0, behavior: "smooth" });
-            }}
-            className="hover:text-theme"
-          >
-            About
-          </motion.li>
-          <motion.li
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              setDropdown(false);
-              window.scrollTo({ top: 1200, left: 0, behavior: "smooth" });
-            }}
-            className="hover:text-theme"
-          >
-            Skills
-          </motion.li>
-          <motion.li
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              setDropdown(false);
-              window.scrollTo({ top: 1700, left: 0, behavior: "smooth" });
-            }}
-            className="hover:text-theme"
-          >
-            Experience
-          </motion.li>
-          <motion.li
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              setDropdown(false);
-              window.scrollTo({ top: 2300, left: 0, behavior: "smooth" });
-            }}
-            className="hover:text-theme"
-          >
-            Work
-          </motion.li>
-          <motion.li
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              setDropdown(false);
-              window.scrollTo({ top: 4000, left: 0, behavior: "smooth" });
-            }}
-            className="hover:text-theme"
-          >
-            Contact
-          </motion.li>
-        </ul>
-      </div>
+          </motion.button>
+
+          <ul className="flex items-center space-x-8 font-medium">
+            {navItems.map((item, index) => (
+              <motion.li
+                key={item.name}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.1, y: -2 }}
+                onClick={() => scrollToSection(item.scroll)}
+                className="cursor-pointer text-light hover:text-theme transition-colors duration-200 relative group"
+              >
+                {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-theme to-secondary group-hover:w-full transition-all duration-300"></span>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </motion.nav>
 
       {/* Mobile Navbar */}
-      <div className="flex items-center justify-between px-6 py-7 md:hidden">
-        <button className="relative w-fit rounded-full border-2 border-theme p-5">
-          <span className="absolute top-1 left-[0.75rem] text-2xl font-semibold text-theme">
+      <div className="md:hidden">
+        <div className={`flex items-center justify-between px-6 py-6 relative z-50 transition-all duration-300 ${
+          scrolled ? 'backdrop-blur-md bg-surface' : 'bg-transparent'
+        }`}>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="w-12 h-12 rounded-full bg-gradient-to-r from-theme to-secondary flex items-center justify-center font-bold text-white shadow-lg"
+          >
             S
-          </span>
-        </button>
-        {dropdown ? (
-          <X
-            onClick={() => {
-              setDropdown(false);
-            }}
-            size={38}
-            className="absolute right-8 top-8 z-30 cursor-pointer text-light"
-          />
-        ) : (
-          <List
-            onClick={() => {
-              setDropdown(true);
-            }}
-            size={38}
-            className="cursor-pointer text-light"
-          />
-        )}
+          </motion.button>
+
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setDropdown(!dropdown)}
+            className="p-2 rounded-lg glass-card"
+          >
+            <AnimatePresence mode="wait">
+              {dropdown ? (
+                <motion.div
+                  key="close"
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: 180 }}
+                  exit={{ rotate: 0 }}
+                >
+                  <X size={24} className="text-light" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ rotate: 180 }}
+                  animate={{ rotate: 0 }}
+                  exit={{ rotate: 180 }}
+                >
+                  <List size={24} className="text-light" />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.button>
+        </div>
+
+        {/* Mobile Menu Overlay */}
+        <AnimatePresence>
+          {dropdown && (
+            <>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setDropdown(false)}
+                className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+              />
+
+              <motion.div
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                className="fixed right-0 top-0 h-full w-4/5 max-w-sm bg-surface backdrop-blur-md border-l border-white/10 z-50 flex flex-col justify-center"
+              >
+                <ul className="space-y-8 px-8">
+                  {navItems.map((item, index) => (
+                    <motion.li
+                      key={item.name}
+                      initial={{ opacity: 0, x: 50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      whileHover={{ x: 10 }}
+                      onClick={() => scrollToSection(item.scroll)}
+                      className="text-xl font-medium text-light hover:text-theme transition-colors duration-200 cursor-pointer"
+                    >
+                      {item.name}
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </div>
-      {dropdown ? (
-        <div
-          onClick={() => {
-            setDropdown(false);
-          }}
-          className="absolute top-0 left-0 z-0 h-full w-full bg-slate-900 opacity-40"
-        ></div>
-      ) : null}
-      <div
-        className={`fixed right-0 top-0 z-20 flex h-screen w-3/4 transform flex-col items-center justify-center overflow-hidden bg-gray-900 sm:w-3/5 md:hidden ${
-          dropdown ? "translate-x-0" : "translate-x-full"
-        } duration-300 ease-in-out`}
-      >
-        <ul className="-mt-20 flex flex-col space-y-14 text-lg font-medium text-light sm:-mt-12">
-          <li
-            onClick={() => {
-              setDropdown(false);
-              window.scrollTo({ top: 800, left: 0, behavior: "smooth" });
-            }}
-            className="hover:text-theme"
-          >
-            About
-          </li>
-          <li
-            onClick={() => {
-              setDropdown(false);
-              window.scrollTo({ top: 1400, left: 0, behavior: "smooth" });
-            }}
-            className="hover:text-theme"
-          >
-            Skills
-          </li>
-          <li
-            onClick={() => {
-              setDropdown(false);
-              window.scrollTo({ top: 2000, left: 0, behavior: "smooth" });
-            }}
-            className="hover:text-theme"
-          >
-            Experience
-          </li>
-          <li
-            onClick={() => {
-              setDropdown(false);
-              window.scrollTo({ top: 2700, left: 0, behavior: "smooth" });
-            }}
-            className="hover:text-theme"
-          >
-            Work
-          </li>
-          <li
-            onClick={() => {
-              setDropdown(false);
-              window.scrollTo({ top: 5000, left: 0, behavior: "smooth" });
-            }}
-            className="hover:text-theme"
-          >
-            Contact
-          </li>
-        </ul>
-      </div>
-    </div>
+    </>
   );
 };
 

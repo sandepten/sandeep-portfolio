@@ -4,63 +4,125 @@ import {
   InstagramLogo,
   LinkedinLogo,
   TwitterLogo,
+  Heart,
 } from "phosphor-react";
 
 export default function Footer() {
+  const socialLinks = [
+    {
+      icon: <GithubLogo size={24} />,
+      url: "https://github.com/sandepten",
+      label: "GitHub",
+    },
+    {
+      icon: <LinkedinLogo size={24} />,
+      url: "https://www.linkedin.com/in/sandepten",
+      label: "LinkedIn",
+    },
+    {
+      icon: <InstagramLogo size={24} />,
+      url: "https://instagram.com/sandepten1",
+      label: "Instagram",
+    },
+    {
+      icon: <TwitterLogo size={24} />,
+      url: "https://twitter.com/sandepten",
+      label: "Twitter",
+    },
+  ];
+
   return (
-    <div className="">
-      <div className="flex justify-evenly xs:mx-auto xs:w-3/4 md:fixed md:left-7 md:bottom-0 md:w-auto md:flex-col md:items-center md:space-y-8 xl:left-12">
-        <motion.div whileHover={{ scale: 1.3 }}>
-          <GithubLogo
-            onClick={() => {
-              window.open("https://github.com/sandepten", "_blank");
-            }}
-            size={24}
-            className="text-dark hover:text-theme"
-          />
-        </motion.div>
-        <motion.div whileHover={{ scale: 1.3 }}>
-          <LinkedinLogo
-            onClick={() => {
-              window.open("https://www.linkedin.com/in/sandepten", "_blank");
-            }}
-            size={24}
-            className="text-dark hover:text-theme"
-          />
-        </motion.div>
-        <motion.div whileHover={{ scale: 1.3 }}>
-          <InstagramLogo
-            onClick={() => {
-              window.open("https://instagram.com/sandepten1", "_blank");
-            }}
-            size={24}
-            className="text-dark hover:text-theme"
-          />
-        </motion.div>
-        <motion.div whileHover={{ scale: 1.3 }}>
-          <TwitterLogo
-            onClick={() => {
-              window.open("https://twitter.com/sandepten", "_blank");
-            }}
-            size={24}
-            className="text-dark hover:text-theme"
-          />
-        </motion.div>
-        <div className="hidden h-20 border-r border-dark md:block"></div>
+    <footer className="relative">
+      {/* Desktop Social Links - Left Side */}
+      <div className="hidden md:block fixed left-8 bottom-0 z-40">
+        <div className="flex flex-col items-center space-y-6">
+          {socialLinks.map((social, index) => (
+            <motion.a
+              key={social.label}
+              href={social.url}
+              target="_blank"
+              rel="noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ scale: 1.2, y: -3 }}
+              className="p-2 text-dark hover:text-theme transition-all duration-200 hover:bg-white/10 rounded-lg"
+            >
+              {social.icon}
+            </motion.a>
+          ))}
+          <div className="w-px h-20 bg-gradient-to-t from-transparent to-dark"></div>
+        </div>
       </div>
-      <a href="mailto:sandepten@gmail.com">
+
+      {/* Desktop Email - Right Side */}
+      <div className="hidden md:block fixed right-8 bottom-0 z-40">
+        <div className="flex flex-col items-center space-y-6">
+          <motion.a
+            href="mailto:sandepten@gmail.com"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            whileHover={{ scale: 1.05, y: -3 }}
+            className="text-dark hover:text-theme transition-all duration-200 text-sm font-mono vertical-text hover:bg-white/10 p-2 rounded-lg"
+            style={{
+              writingMode: "vertical-rl",
+              textOrientation: "mixed",
+            }}
+          >
+            sandepten@gmail.com
+          </motion.a>
+          <div className="w-px h-20 bg-gradient-to-t from-transparent to-dark"></div>
+        </div>
+      </div>
+
+      {/* Mobile Social Links */}
+      <div className="md:hidden">
+        <div className="flex justify-center space-x-8 mb-8">
+          {socialLinks.map((social, index) => (
+            <motion.a
+              key={social.label}
+              href={social.url}
+              target="_blank"
+              rel="noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ scale: 1.2, y: -3 }}
+              className="p-3 text-dark hover:text-theme transition-all duration-200 hover:bg-white/10 rounded-xl"
+            >
+              {social.icon}
+            </motion.a>
+          ))}
+        </div>
+      </div>
+
+      {/* Footer Content */}
+      <div className="text-center py-12">
         <motion.div
-          whileHover={{ scale: 1.1 }}
-          className="hidden justify-between text-dark hover:text-theme xs:w-3/4 md:fixed md:-right-12 md:bottom-0 md:flex md:w-auto md:flex-col md:items-center md:space-y-28 xl:-right-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="glass-card p-6 rounded-xl max-w-md mx-auto"
         >
-          <span className="rotate-90">sandepten@gmail.com</span>
-          <div className="hidden h-20 border-r border-dark md:block"></div>
+          <p className="text-dark text-sm mb-2 flex items-center justify-center gap-2">
+            Built with{" "}
+            <Heart className="text-red-500 animate-pulse" size={16} /> by{" "}
+            <span className="gradient-text font-semibold">Sandeep Kumar</span>
+          </p>
+          <p className="text-dark text-xs">
+            Inspired by{" "}
+            <a
+              href="https://brittanychiang.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-theme hover:underline"
+            >
+              Brittany Chiang
+            </a>
+          </p>
         </motion.div>
-      </a>
-      <div className="py-8 text-center text-dark">
-        <p>Build by Sandeep Kumar</p>
-        <p>Inspired from Brittany Chiang</p>
       </div>
-    </div>
+    </footer>
   );
 }
