@@ -42,8 +42,8 @@ export default function About() {
             <span className="gradient-text">About Me</span>
           </h2>
           <p className="text-xl text-muted max-w-2xl mx-auto">
-            Passionate developer with a love for creating beautiful and functional
-            web experiences
+            Passionate software developer with expertise in full-stack development,
+            DevOps automation, and scalable cloud solutions
           </p>
         </motion.div>
 
@@ -55,13 +55,12 @@ export default function About() {
                 <h3 className="text-xl font-semibold">My Journey</h3>
               </div>
               <p className="text-muted leading-relaxed">
-                The COVID lockdown became a turning point in my life, introducing me
-                to the fascinating world of{" "}
+                My journey into software development began during the COVID lockdown, when I discovered my passion for{" "}
                 <span className="gradient-text font-semibold">
-                  web development and programming
+                  creating innovative digital solutions
                 </span>
-                . What started as curiosity quickly evolved into a deep passion for
-                creating digital solutions.
+                . From learning the fundamentals through Harvard's CS50x to working with Fortune 500 companies,
+                I've continuously evolved my skills in modern technologies.
               </p>
             </div>
 
@@ -73,11 +72,10 @@ export default function About() {
               <p className="text-muted leading-relaxed">
                 I specialize in{" "}
                 <span className="gradient-text font-semibold">
-                  full-stack web development
+                  full-stack development, DevOps automation, and cloud infrastructure
                 </span>
-                , crafting beautiful user interfaces and robust backend systems. I love
-                working with modern technologies like React, Next.js, Node.js, and
-                exploring blockchain integrations.
+                , working with technologies like React, Node.js, Go, Java, Docker, and Kubernetes.
+                I've contributed to projects that serve millions of users and reduced deployment times by up to 30%.
               </p>
             </div>
 
@@ -87,12 +85,12 @@ export default function About() {
                 <h3 className="text-xl font-semibold">Looking Forward</h3>
               </div>
               <p className="text-muted leading-relaxed">
-                I'm currently{" "}
+                Currently working as a{" "}
                 <span className="gradient-text font-semibold">
-                  seeking new opportunities
-                </span>{" "}
-                to work with innovative teams and create impactful digital experiences.
-                Let's build something amazing together!
+                  Software Developer at Reliance Jio
+                </span>
+                , I'm passionate about building scalable solutions and contributing to open-source projects.
+                Always excited to take on new challenges and collaborate with innovative teams!
               </p>
             </div>
           </motion.div>

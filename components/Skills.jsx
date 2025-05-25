@@ -14,27 +14,39 @@ import React from "react";
 export default function Skills() {
   const skillCategories = [
     {
-      title: "Frontend",
-      icon: <Palette size={24} />,
-      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Redux"],
+      title: "Programming Languages",
+      icon: <Code size={24} />,
+      skills: ["JavaScript", "TypeScript", "Go", "Java", "Python", "Rust"],
       color: "from-indigo-600 to-purple-600"
     },
     {
-      title: "Backend",
+      title: "Frontend & Mobile",
+      icon: <Palette size={24} />,
+      skills: ["React", "Next.js", "Angular", "Svelte", "Tailwind CSS", "Redux"],
+      color: "from-blue-600 to-cyan-600"
+    },
+    {
+      title: "Backend & APIs",
       icon: <Database size={24} />,
-      skills: ["Node.js", "Express.js", "Python", "MongoDB", "PostgreSQL", "Firebase"],
+      skills: ["Node.js", "Spring Boot", "Express.js", "GraphQL", "Microservices", "REST"],
       color: "from-emerald-600 to-teal-600"
     },
     {
-      title: "Tools & Technologies",
-      icon: <Lightning size={24} />,
-      skills: ["Git", "Docker", "AWS", "Vercel", "Linux", "Blockchain"],
+      title: "DevOps & Cloud",
+      icon: <CloudArrowUp size={24} />,
+      skills: ["Docker", "Kubernetes", "AWS", "GCP", "Terraform", "Jenkins"],
+      color: "from-orange-600 to-red-600"
+    },
+    {
+      title: "Databases",
+      icon: <Database size={24} />,
+      skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "DynamoDB", "Elasticsearch"],
       color: "from-violet-600 to-purple-600"
     },
     {
-      title: "Languages",
-      icon: <Code size={24} />,
-      skills: ["JavaScript", "TypeScript", "Python", "C++", "Solidity", "SQL"],
+      title: "Tools & Testing",
+      icon: <Lightning size={24} />,
+      skills: ["Git", "Cypress", "Jest", "Playwright", "Linux", "Bash"],
       color: "from-slate-600 to-gray-600"
     }
   ];
@@ -75,7 +87,8 @@ export default function Skills() {
           <span className="gradient-text">Skills & Technologies</span>
         </motion.h3>
         <motion.p variants={itemVariants} className="text-lg text-muted max-w-2xl mx-auto">
-          A comprehensive toolkit of modern technologies I've mastered over the years
+          A comprehensive toolkit spanning full-stack development, DevOps automation,
+          and cloud infrastructure with hands-on experience in enterprise environments
         </motion.p>
       </motion.div>
 
@@ -127,8 +140,9 @@ export default function Skills() {
         <div className="glass-card p-8 rounded-2xl">
           <h4 className="text-xl font-semibold mb-4 gradient-text">Always Learning</h4>
           <p className="text-muted max-w-2xl mx-auto">
-            The tech world evolves rapidly, and I'm committed to continuous learning.
-            Currently exploring AI/ML integration, Web3 technologies, and advanced cloud architectures.
+            The tech landscape evolves rapidly, and I'm committed to continuous learning.
+            Currently exploring advanced system design, AI/ML integration, and contributing to
+            high-impact open-source projects with 10K+ GitHub stars.
           </p>
         </div>
       </motion.div>

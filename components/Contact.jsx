@@ -68,13 +68,13 @@ export default function Contact() {
             </div>
 
             <p className="text-muted mb-8 leading-relaxed">
-              I'm currently{" "}
+              I'm currently working as a{" "}
               <span className="gradient-text font-semibold">
-                open to new opportunities
+                Software Developer at Reliance Jio
               </span>{" "}
               and always interested in discussing innovative projects, potential
-              collaborations, or just having a friendly chat about technology and
-              development.
+              collaborations, or just having a friendly chat about technology, DevOps,
+              and scalable system architecture.
             </p>
 
             <motion.a

@@ -54,14 +54,14 @@ export default function Dashboard() {
         </motion.h1>
 
         <motion.p variants={itemVariants} className="text-xl md:text-2xl lg:text-3xl text-muted font-medium mb-8 max-w-4xl mx-auto">
-          Full-Stack Developer crafting beautiful digital experiences with modern technologies
+          Software Developer crafting scalable solutions with modern technologies
         </motion.p>
 
         <motion.p variants={itemVariants} className="text-lg text-muted max-w-2xl mx-auto mb-12 leading-relaxed">
-          I specialize in building exceptional websites and applications using React, Next.js, and Node.js.
-          Currently creating innovative solutions at{" "}
-          <a href="https://createprotocol.org/" className="gradient-text font-semibold hover:underline">
-            Create Protocol
+          I specialize in building full-stack applications, DevOps automation, and cloud infrastructure.
+          Currently engineering innovative solutions at{" "}
+          <a href="https://www.jio.com/" className="gradient-text font-semibold hover:underline">
+            Reliance Jio
           </a>
         </motion.p>
 
