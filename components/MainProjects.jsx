@@ -40,7 +40,7 @@ export default function MainProjects() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="gradient-text">Featured Projects</span>
           </h2>
-          <p className="text-xl text-dark max-w-2xl mx-auto">
+          <p className="text-xl text-muted max-w-2xl mx-auto">
             A showcase of some of my best work and side projects
           </p>
         </motion.div>
@@ -115,7 +115,7 @@ export default function MainProjects() {
                 </div>
 
                 <div className="glass-card p-6 rounded-xl backdrop-blur-md">
-                  <p className="text-light leading-relaxed">
+                  <p className="text-muted leading-relaxed">
                     {project.description}
                   </p>
                 </div>

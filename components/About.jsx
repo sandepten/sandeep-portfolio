@@ -41,7 +41,7 @@ export default function About() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="gradient-text">About Me</span>
           </h2>
-          <p className="text-xl text-dark max-w-2xl mx-auto">
+          <p className="text-xl text-muted max-w-2xl mx-auto">
             Passionate developer with a love for creating beautiful and functional
             web experiences
           </p>
@@ -54,7 +54,7 @@ export default function About() {
                 <Heart className="text-theme" size={24} />
                 <h3 className="text-xl font-semibold">My Journey</h3>
               </div>
-              <p className="text-dark leading-relaxed">
+              <p className="text-muted leading-relaxed">
                 The COVID lockdown became a turning point in my life, introducing me
                 to the fascinating world of{" "}
                 <span className="gradient-text font-semibold">
@@ -70,7 +70,7 @@ export default function About() {
                 <Code className="text-secondary" size={24} />
                 <h3 className="text-xl font-semibold">What I Do</h3>
               </div>
-              <p className="text-dark leading-relaxed">
+              <p className="text-muted leading-relaxed">
                 I specialize in{" "}
                 <span className="gradient-text font-semibold">
                   full-stack web development
@@ -86,7 +86,7 @@ export default function About() {
                 <Rocket className="text-accent" size={24} />
                 <h3 className="text-xl font-semibold">Looking Forward</h3>
               </div>
-              <p className="text-dark leading-relaxed">
+              <p className="text-muted leading-relaxed">
                 I'm currently{" "}
                 <span className="gradient-text font-semibold">
                   seeking new opportunities

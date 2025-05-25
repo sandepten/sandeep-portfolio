@@ -51,7 +51,7 @@ export default function Contact() {
 
         <motion.p
           variants={itemVariants}
-          className="text-xl text-dark leading-relaxed mb-12 max-w-2xl mx-auto"
+          className="text-xl text-muted leading-relaxed mb-12 max-w-2xl mx-auto"
         >
           I'm always excited about new opportunities and interesting projects.
           Whether you have a question, want to collaborate, or just want to say
@@ -67,7 +67,7 @@ export default function Contact() {
               </h3>
             </div>
 
-            <p className="text-dark mb-8 leading-relaxed">
+            <p className="text-muted mb-8 leading-relaxed">
               I'm currently{" "}
               <span className="gradient-text font-semibold">
                 open to new opportunities
@@ -97,12 +97,12 @@ export default function Contact() {
           >
             <div className="glass-card p-6 rounded-xl text-center">
               <h4 className="font-semibold text-light mb-2">Response Time</h4>
-              <p className="text-dark text-sm">Usually within 24 hours</p>
+              <p className="text-muted text-sm">Usually within 24 hours</p>
             </div>
 
             <div className="glass-card p-6 rounded-xl text-center">
               <h4 className="font-semibold text-light mb-2">Preferred Method</h4>
-              <p className="text-dark text-sm">
+              <p className="text-muted text-sm">
                 Email for detailed discussions
               </p>
             </div>

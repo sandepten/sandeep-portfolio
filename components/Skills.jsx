@@ -74,7 +74,7 @@ export default function Skills() {
         <motion.h3 variants={itemVariants} className="text-3xl md:text-4xl font-bold mb-6">
           <span className="gradient-text">Skills & Technologies</span>
         </motion.h3>
-        <motion.p variants={itemVariants} className="text-lg text-dark max-w-2xl mx-auto">
+        <motion.p variants={itemVariants} className="text-lg text-muted max-w-2xl mx-auto">
           A comprehensive toolkit of modern technologies I've mastered over the years
         </motion.p>
       </motion.div>
@@ -106,7 +106,7 @@ export default function Skills() {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: skillIndex * 0.1 }}
-                  className="flex items-center gap-2 text-dark hover:text-light transition-colors duration-200"
+                  className="flex items-center gap-2 text-muted hover:text-light transition-colors duration-200"
                 >
                   <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${category.color}`}></div>
                   <span className="text-sm font-medium">{skill}</span>
@@ -126,7 +126,7 @@ export default function Skills() {
       >
         <div className="glass-card p-8 rounded-2xl">
           <h4 className="text-xl font-semibold mb-4 gradient-text">Always Learning</h4>
-          <p className="text-dark max-w-2xl mx-auto">
+          <p className="text-muted max-w-2xl mx-auto">
             The tech world evolves rapidly, and I'm committed to continuous learning.
             Currently exploring AI/ML integration, Web3 technologies, and advanced cloud architectures.
           </p>

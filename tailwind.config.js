@@ -13,8 +13,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        dark: "#64748b",
-        light: "#f1f5f9",
+        dark: "#94a3b8", // Lighter for better contrast
+        light: "#f8fafc", // Slightly brighter white
+        muted: "#cbd5e1", // New color for better readability
         theme: "#6366f1",
         secondary: "#8b5cf6",
         accent: "#06b6d4",

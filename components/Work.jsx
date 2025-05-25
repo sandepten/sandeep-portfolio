@@ -39,7 +39,7 @@ export default function Work() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="gradient-text">Professional Experience</span>
           </h2>
-          <p className="text-xl text-dark max-w-2xl mx-auto">
+          <p className="text-xl text-muted max-w-2xl mx-auto">
             Building innovative solutions and growing with amazing teams
           </p>
         </motion.div>
@@ -75,7 +75,7 @@ export default function Work() {
                     </a>
                   </div>
 
-                  <div className="flex items-center gap-2 text-dark font-mono text-sm mb-6">
+                  <div className="flex items-center gap-2 text-muted font-mono text-sm mb-6">
                     <Calendar size={16} />
                     October 2022 - Present (2+ years)
                   </div>
@@ -97,7 +97,7 @@ export default function Work() {
                       className="flex gap-4 group"
                     >
                       <CaretRight className="mt-1 text-theme flex-shrink-0 group-hover:text-secondary transition-colors duration-200" size={20} />
-                      <p className="text-dark leading-relaxed group-hover:text-light transition-colors duration-200">
+                      <p className="text-muted leading-relaxed group-hover:text-light transition-colors duration-200">
                         {achievement}
                       </p>
                     </motion.div>
@@ -133,15 +133,15 @@ export default function Work() {
                   <h4 className="font-semibold mb-3 gradient-text">Impact</h4>
                   <div className="space-y-3 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-dark">Projects Delivered</span>
+                      <span className="text-muted">Projects Delivered</span>
                       <span className="font-semibold text-light">15+</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-dark">Client Satisfaction</span>
+                      <span className="text-muted">Client Satisfaction</span>
                       <span className="font-semibold text-light">100%</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-dark">Team Growth</span>
+                      <span className="text-muted">Team Growth</span>
                       <span className="font-semibold text-light">200%</span>
                     </div>
                   </div>

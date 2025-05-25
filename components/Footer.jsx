@@ -46,7 +46,7 @@ export default function Footer() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.2, y: -3 }}
-              className="p-2 text-dark hover:text-theme transition-all duration-200 hover:bg-white/10 rounded-lg"
+              className="p-2 text-muted hover:text-theme transition-all duration-200 hover:bg-white/10 rounded-lg"
             >
               {social.icon}
             </motion.a>
@@ -64,7 +64,7 @@ export default function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
             whileHover={{ scale: 1.05, y: -3 }}
-            className="text-dark hover:text-theme transition-all duration-200 text-sm font-mono vertical-text hover:bg-white/10 p-2 rounded-lg"
+            className="text-muted hover:text-theme transition-all duration-200 text-sm font-mono vertical-text hover:bg-white/10 p-2 rounded-lg"
             style={{
               writingMode: "vertical-rl",
               textOrientation: "mixed",
@@ -89,7 +89,7 @@ export default function Footer() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.2, y: -3 }}
-              className="p-3 text-dark hover:text-theme transition-all duration-200 hover:bg-white/10 rounded-xl"
+              className="p-3 text-muted hover:text-theme transition-all duration-200 hover:bg-white/10 rounded-xl"
             >
               {social.icon}
             </motion.a>
@@ -105,12 +105,12 @@ export default function Footer() {
           viewport={{ once: true }}
           className="glass-card p-6 rounded-xl max-w-md mx-auto"
         >
-          <p className="text-dark text-sm mb-2 flex items-center justify-center gap-2">
+          <p className="text-muted text-sm mb-2 flex items-center justify-center gap-2">
             Built with{" "}
             <Heart className="text-red-500 animate-pulse" size={16} /> by{" "}
             <span className="gradient-text font-semibold">Sandeep Kumar</span>
           </p>
-          <p className="text-dark text-xs">
+          <p className="text-muted text-xs">
             Inspired by{" "}
             <a
               href="https://brittanychiang.com"

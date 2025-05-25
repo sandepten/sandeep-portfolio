@@ -42,7 +42,7 @@ export default function OtherProjects() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             <span className="gradient-text">Other Notable Projects</span>
           </h2>
-          <p className="text-lg text-dark max-w-2xl mx-auto">
+          <p className="text-lg text-muted max-w-2xl mx-auto">
             A collection of other projects I've worked on during my learning
             journey
           </p>
@@ -112,7 +112,7 @@ export default function OtherProjects() {
                     {project.name}
                   </h3>
 
-                  <p className="text-dark leading-relaxed mb-6 group-hover:text-light transition-colors duration-200">
+                  <p className="text-muted leading-relaxed mb-6 group-hover:text-light transition-colors duration-200">
                     {project.description}
                   </p>
                 </div>
@@ -122,7 +122,7 @@ export default function OtherProjects() {
                   {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-xs font-medium text-dark bg-white/5 rounded-full border border-white/10 group-hover:text-light group-hover:border-theme/30 transition-all duration-200"
+                      className="px-3 py-1 text-xs font-medium text-muted bg-white/5 rounded-full border border-white/10 group-hover:text-light group-hover:border-theme/30 transition-all duration-200"
                     >
                       {tech}
                     </span>

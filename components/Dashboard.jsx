@@ -53,11 +53,11 @@ export default function Dashboard() {
           <span className="block gradient-text">Sandeep Kumar</span>
         </motion.h1>
 
-        <motion.p variants={itemVariants} className="text-xl md:text-2xl lg:text-3xl text-dark font-medium mb-8 max-w-4xl mx-auto">
+        <motion.p variants={itemVariants} className="text-xl md:text-2xl lg:text-3xl text-muted font-medium mb-8 max-w-4xl mx-auto">
           Full-Stack Developer crafting beautiful digital experiences with modern technologies
         </motion.p>
 
-        <motion.p variants={itemVariants} className="text-lg text-dark max-w-2xl mx-auto mb-12 leading-relaxed">
+        <motion.p variants={itemVariants} className="text-lg text-muted max-w-2xl mx-auto mb-12 leading-relaxed">
           I specialize in building exceptional websites and applications using React, Next.js, and Node.js.
           Currently creating innovative solutions at{" "}
           <a href="https://createprotocol.org/" className="gradient-text font-semibold hover:underline">
