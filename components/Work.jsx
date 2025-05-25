@@ -27,7 +27,7 @@ export default function Work() {
   };
 
   return (
-    <section className="section-padding">
+    <section id="experience" className="section-padding">
       <motion.div
         variants={containerVariants}
         initial="hidden"

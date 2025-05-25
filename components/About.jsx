@@ -29,7 +29,7 @@ export default function About() {
   };
 
   return (
-    <section className="section-padding">
+    <section id="about" className="section-padding">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -113,7 +113,7 @@ export default function About() {
             <div className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-r from-theme to-secondary rounded-full flex items-center justify-center animate-float">
               <Code className="text-white" size={24} />
             </div>
-            <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-r from-accent to-theme rounded-full flex items-center justify-center animate-float">
+            <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-r from-accent to-theme rounded-full flex items-center justify-center animate-float" style={{ animationDelay: '1s' }}>
               <Rocket className="text-white" size={24} />
             </div>
           </motion.div>

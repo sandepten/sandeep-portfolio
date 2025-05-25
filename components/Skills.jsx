@@ -17,25 +17,25 @@ export default function Skills() {
       title: "Frontend",
       icon: <Palette size={24} />,
       skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Redux"],
-      color: "from-blue-500 to-cyan-500"
+      color: "from-indigo-600 to-purple-600"
     },
     {
       title: "Backend",
       icon: <Database size={24} />,
       skills: ["Node.js", "Express.js", "Python", "MongoDB", "PostgreSQL", "Firebase"],
-      color: "from-green-500 to-emerald-500"
+      color: "from-emerald-600 to-teal-600"
     },
     {
       title: "Tools & Technologies",
       icon: <Lightning size={24} />,
       skills: ["Git", "Docker", "AWS", "Vercel", "Linux", "Blockchain"],
-      color: "from-purple-500 to-pink-500"
+      color: "from-violet-600 to-purple-600"
     },
     {
       title: "Languages",
       icon: <Code size={24} />,
       skills: ["JavaScript", "TypeScript", "Python", "C++", "Solidity", "SQL"],
-      color: "from-orange-500 to-red-500"
+      color: "from-slate-600 to-gray-600"
     }
   ];
 
@@ -63,7 +63,7 @@ export default function Skills() {
   };
 
   return (
-    <section className="mt-32">
+    <section id="skills" className="mt-32">
       <motion.div
         variants={containerVariants}
         initial="hidden"

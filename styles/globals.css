@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply max-w-full overflow-x-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 font-sans text-light;
+    @apply max-w-full overflow-x-hidden bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 font-sans text-light;
   }
 
   html {
@@ -15,7 +15,7 @@
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: #6366f1 #1e293b;
+    scrollbar-color: #4f46e5 #0f172a;
   }
 
   *::-webkit-scrollbar {
@@ -23,22 +23,22 @@
   }
 
   *::-webkit-scrollbar-track {
-    background: #1e293b;
+    background: #0f172a;
   }
 
   *::-webkit-scrollbar-thumb {
-    background: #6366f1;
+    background: #4f46e5;
     border-radius: 4px;
   }
 
   *::-webkit-scrollbar-thumb:hover {
-    background: #8b5cf6;
+    background: #7c3aed;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply backdrop-blur-md bg-white/10 border border-white/20 shadow-xl;
+    @apply backdrop-blur-md bg-white/5 border border-white/10 shadow-xl;
   }
 
   .gradient-text {

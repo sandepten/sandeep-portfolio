@@ -28,7 +28,7 @@ export default function MainProjects() {
   };
 
   return (
-    <section className="section-padding">
+    <section id="projects" className="section-padding">
       <motion.div
         variants={containerVariants}
         initial="hidden"

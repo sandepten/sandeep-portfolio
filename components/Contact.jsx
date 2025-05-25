@@ -27,7 +27,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="section-padding">
+    <section id="contact" className="section-padding">
       <motion.div
         variants={containerVariants}
         initial="hidden"

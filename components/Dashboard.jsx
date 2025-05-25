@@ -31,8 +31,8 @@ export default function Dashboard() {
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-r from-theme to-secondary rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-r from-accent to-theme rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-r from-theme to-secondary rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-float"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-r from-accent to-theme rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <motion.div
@@ -79,7 +79,14 @@ export default function Dashboard() {
           </motion.a>
 
           <motion.button
-            onClick={() => window.scrollTo({ top: 900, behavior: "smooth" })}
+            onClick={() => {
+              const element = document.getElementById('about');
+              if (element) {
+                const yOffset = -100;
+                const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({ top: y, behavior: "smooth" });
+              }
+            }}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-3 px-8 py-4 glass-card text-light font-semibold rounded-xl hover:bg-white/20 transition-all duration-300"
