@@ -34,7 +34,7 @@ export default function About() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         className="max-w-7xl mx-auto"
       >
         <motion.div variants={itemVariants} className="text-center mb-20">
@@ -125,6 +125,7 @@ export default function About() {
                       key={stat.label}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
                       whileHover={{ y: -5, scale: 1.05 }}
                       className="glass-card p-4 rounded-xl text-center group hover:shadow-xl hover:shadow-theme/10 transition-all duration-300"
@@ -147,6 +148,7 @@ export default function About() {
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
                 transition={{ delay: 0.2 }}
                 className="glass-card p-8 rounded-2xl group hover:shadow-xl hover:shadow-theme/10 transition-all duration-500 relative z-10"
               >
@@ -169,6 +171,7 @@ export default function About() {
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
                 transition={{ delay: 0.4 }}
                 className="glass-card p-8 rounded-2xl group hover:shadow-xl hover:shadow-secondary/10 transition-all duration-500 relative z-20 lg:-mt-4 lg:ml-8"
               >
@@ -191,6 +194,7 @@ export default function About() {
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
                 transition={{ delay: 0.6 }}
                 className="glass-card p-8 rounded-2xl group hover:shadow-xl hover:shadow-accent/10 transition-all duration-500 relative z-30 lg:-mt-4"
               >
@@ -214,6 +218,7 @@ export default function About() {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.7 }}
                 transition={{ delay: 0.8 }}
                 className="grid grid-cols-2 gap-4 lg:ml-4"
               >

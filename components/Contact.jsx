@@ -32,7 +32,7 @@ export default function Contact() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         className="max-w-4xl mx-auto text-center"
       >
         <motion.div variants={itemVariants} className="mb-8">

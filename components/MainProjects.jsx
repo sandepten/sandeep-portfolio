@@ -33,7 +33,7 @@ export default function MainProjects() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.2 }}
         className="max-w-7xl mx-auto"
       >
         <motion.div variants={itemVariants} className="text-center mb-20">

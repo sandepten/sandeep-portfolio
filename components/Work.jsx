@@ -32,7 +32,7 @@ export default function Work() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.2 }}
         className="max-w-6xl mx-auto"
       >
         <motion.div variants={itemVariants} className="text-center mb-20">
@@ -81,7 +81,13 @@ export default function Work() {
                       "Designed comprehensive API Gateway infrastructure with Apicurio, Microcks, and Kubernetes, supporting 50+ microservices",
                       "Developed end-to-end solutions with Angular micro-frontends and Java Spring Boot backends for critical services"
                     ].map((achievement, index) => (
-                      <motion.div key={index} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.1 }} className="flex gap-4 group">
+                      <motion.div key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 }}
+                        className="flex gap-4 group"
+                      >
                         <CaretRight className="mt-1 text-theme flex-shrink-0 group-hover:text-secondary transition-colors duration-200" size={20} />
                         <p className="text-muted leading-relaxed group-hover:text-light transition-colors duration-200">{achievement}</p>
                       </motion.div>
@@ -133,7 +139,13 @@ export default function Work() {
                       "Improved database performance by 40% through Node.js/Express/Nest.js backend optimization",
                       "Decreased production error rates by 50% with Golang tracking and traceability application"
                     ].map((achievement, index) => (
-                      <motion.div key={index} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.1 }} className="flex gap-4 group">
+                      <motion.div key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 }}
+                        className="flex gap-4 group"
+                      >
                         <CaretRight className="mt-1 text-secondary flex-shrink-0 group-hover:text-accent transition-colors duration-200" size={20} />
                         <p className="text-muted leading-relaxed group-hover:text-light transition-colors duration-200">{achievement}</p>
                       </motion.div>
@@ -189,7 +201,13 @@ export default function Work() {
                       "Reduced project delivery time by 30% and increased productivity by 25%",
                       "Championed adoption of modern tools and technologies, driving significant technological advancement"
                     ].map((achievement, index) => (
-                      <motion.div key={index} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.1 }} className="flex gap-4 group">
+                      <motion.div key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 }}
+                        className="flex gap-4 group"
+                      >
                         <CaretRight className="mt-1 text-accent flex-shrink-0 group-hover:text-theme transition-colors duration-200" size={20} />
                         <p className="text-muted leading-relaxed group-hover:text-light transition-colors duration-200">{achievement}</p>
                       </motion.div>

@@ -102,7 +102,7 @@ export default function Footer() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.8 }}
           className="glass-card p-6 rounded-xl max-w-md mx-auto"
         >
           <p className="text-muted text-sm mb-2 flex items-center justify-center gap-2">
