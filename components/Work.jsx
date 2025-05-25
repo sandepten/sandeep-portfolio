@@ -101,19 +101,19 @@ export default function Work() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        className="max-w-6xl mx-auto"
+        viewport={{ once: true, amount: 0.1 }}
+        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         {/* Header */}
-        <motion.div variants={itemVariants} className="text-center mb-20">
-          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full glass-card text-sm font-medium mb-8">
+        <motion.div variants={itemVariants} className="text-center mb-12 lg:mb-20">
+          <div className="inline-flex items-center gap-3 px-4 lg:px-5 py-2 rounded-full glass-card text-sm font-medium mb-6 lg:mb-8">
             <div className="w-2 h-2 rounded-full bg-theme animate-pulse"></div>
             Career Journey
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 lg:mb-6">
             <span className="gradient-text">Professional Experience</span>
           </h2>
-          <p className="text-xl text-muted max-w-2xl mx-auto">
+          <p className="text-lg lg:text-xl text-muted max-w-2xl mx-auto px-4">
             Building innovative solutions and growing with amazing teams across different domains
           </p>
         </motion.div>
@@ -121,19 +121,19 @@ export default function Work() {
         {/* Timeline */}
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-theme/20 via-theme/40 to-theme/20 transform -translate-x-0.5"></div>
+          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-theme/20 via-theme/40 to-theme/20 transform md:-translate-x-0.5"></div>
 
-          <div className="space-y-16">
+          <div className="space-y-12 lg:space-y-16">
             {experiences.map((exp, index) => (
               <motion.div
                 key={exp.company}
                 variants={itemVariants}
-                className={`relative flex flex-col md:flex-row items-start md:items-center gap-8 ${
+                className={`relative flex flex-col md:flex-row items-start md:items-center gap-6 lg:gap-8 ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-theme rounded-full border-4 border-slate-950 transform -translate-x-1/2 z-10 shadow-lg shadow-theme/25">
+                <div className="absolute left-6 md:left-1/2 w-3 h-3 lg:w-4 lg:h-4 bg-theme rounded-full border-2 lg:border-4 border-slate-950 transform -translate-x-1/2 z-10 shadow-lg shadow-theme/25">
                   {exp.current && (
                     <div className="absolute inset-0 bg-theme rounded-full animate-ping"></div>
                   )}
@@ -143,75 +143,75 @@ export default function Work() {
                 <motion.div
                   whileHover={{ y: -5 }}
                   className={`w-full md:w-1/2 ${
-                    index % 2 === 0 ? 'md:pr-16 ml-16 md:ml-0' : 'md:pl-16 ml-16 md:ml-0'
+                    index % 2 === 0 ? 'md:pr-8 lg:pr-16 ml-12 md:ml-0' : 'md:pl-8 lg:pl-16 ml-12 md:ml-0'
                   }`}
                 >
-                  <div className="glass-card p-8 rounded-2xl hover:bg-white/[0.08] transition-all duration-300 border-l-4 border-theme/30 hover:border-theme/60">
+                  <div className="glass-card p-6 lg:p-8 rounded-xl lg:rounded-2xl hover:bg-white/[0.08] transition-all duration-300 border-l-2 lg:border-l-4 border-theme/30 hover:border-theme/60">
                     {/* Header */}
-                    <div className="mb-6">
+                    <div className="mb-4 lg:mb-6">
                       <div className="flex items-center gap-2 mb-2">
-                        <Briefcase className="text-theme" size={20} />
-                        <span className="text-theme font-medium text-sm uppercase tracking-wider">
+                        <Briefcase className="text-theme" size={16} />
+                        <span className="text-theme font-medium text-xs lg:text-sm uppercase tracking-wider">
                           {exp.current ? 'Current Position' : 'Previous Role'}
                         </span>
                       </div>
 
-                      <h3 className="text-2xl font-bold text-light mb-2">
+                      <h3 className="text-xl lg:text-2xl font-bold text-light mb-2">
                         {exp.role}
                       </h3>
 
                       <div className="flex items-center gap-2 mb-3">
-                        <h4 className="text-xl text-muted font-medium">{exp.company}</h4>
+                        <h4 className="text-lg lg:text-xl text-muted font-medium">{exp.company}</h4>
                         <a
                           href={exp.website}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-theme hover:text-secondary transition-colors"
                         >
-                          <Globe size={16} />
+                          <Globe size={14} />
                         </a>
                       </div>
 
-                      <div className="flex flex-wrap gap-4 text-sm text-muted">
-                        <div className="flex items-center gap-2">
-                          <Calendar size={14} />
+                      <div className="flex flex-wrap gap-2 lg:gap-4 text-xs lg:text-sm text-muted">
+                        <div className="flex items-center gap-1 lg:gap-2">
+                          <Calendar size={12} />
                           <span>{exp.period}</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <MapPin size={14} />
+                        <div className="flex items-center gap-1 lg:gap-2">
+                          <MapPin size={12} />
                           <span>{exp.location}</span>
                         </div>
-                        <span className="px-3 py-1 bg-theme/20 text-theme rounded-full text-xs font-medium">
+                        <span className="px-2 lg:px-3 py-1 bg-theme/20 text-theme rounded-full text-xs font-medium">
                           {exp.duration}
                         </span>
                       </div>
                     </div>
 
                     {/* Key Highlights */}
-                    <div className="mb-6">
-                      <h5 className="text-sm font-semibold text-light mb-3 uppercase tracking-wider flex items-center gap-2">
-                        <Star className="text-theme" size={14} />
+                    <div className="mb-4 lg:mb-6">
+                      <h5 className="text-xs lg:text-sm font-semibold text-light mb-2 lg:mb-3 uppercase tracking-wider flex items-center gap-2">
+                        <Star className="text-theme" size={12} />
                         Key Impact
                       </h5>
-                      <div className="grid grid-cols-3 gap-4 text-center">
-                        <div className="glass-card p-3 rounded-lg">
+                      <div className="grid grid-cols-3 gap-2 lg:gap-4 text-center">
+                        <div className="glass-card p-2 lg:p-3 rounded-lg">
                           <div className="text-xs text-muted mb-1">Scale</div>
-                          <div className="text-sm font-medium text-light">{exp.highlights.scale}</div>
+                          <div className="text-xs lg:text-sm font-medium text-light">{exp.highlights.scale}</div>
                         </div>
-                        <div className="glass-card p-3 rounded-lg">
+                        <div className="glass-card p-2 lg:p-3 rounded-lg">
                           <div className="text-xs text-muted mb-1">Team</div>
-                          <div className="text-sm font-medium text-light">{exp.highlights.team}</div>
+                          <div className="text-xs lg:text-sm font-medium text-light">{exp.highlights.team}</div>
                         </div>
-                        <div className="glass-card p-3 rounded-lg">
+                        <div className="glass-card p-2 lg:p-3 rounded-lg">
                           <div className="text-xs text-muted mb-1">Impact</div>
-                          <div className="text-sm font-medium text-light">{exp.highlights.impact}</div>
+                          <div className="text-xs lg:text-sm font-medium text-light">{exp.highlights.impact}</div>
                         </div>
                       </div>
                     </div>
 
                     {/* Achievements */}
-                    <div className="mb-6">
-                      <h5 className="text-sm font-semibold text-light mb-3 uppercase tracking-wider">
+                    <div className="mb-4 lg:mb-6">
+                      <h5 className="text-xs lg:text-sm font-semibold text-light mb-2 lg:mb-3 uppercase tracking-wider">
                         Key Achievements
                       </h5>
                       <div className="space-y-2">
@@ -220,11 +220,11 @@ export default function Work() {
                             key={achIndex}
                             initial={{ opacity: 0, x: -10 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, amount: 0.5 }}
                             transition={{ delay: achIndex * 0.1 }}
-                            className="flex items-start gap-3 text-sm text-muted leading-relaxed"
+                            className="flex items-start gap-2 lg:gap-3 text-xs lg:text-sm text-muted leading-relaxed"
                           >
-                            <ArrowRight className="text-theme mt-0.5 flex-shrink-0" size={14} />
+                            <ArrowRight className="text-theme mt-0.5 flex-shrink-0" size={12} />
                             <span className="hover:text-light transition-colors duration-200">
                               {achievement}
                             </span>
@@ -235,14 +235,14 @@ export default function Work() {
 
                     {/* Technologies */}
                     <div>
-                      <h5 className="text-sm font-semibold text-light mb-3 uppercase tracking-wider">
+                      <h5 className="text-xs lg:text-sm font-semibold text-light mb-2 lg:mb-3 uppercase tracking-wider">
                         Technologies
                       </h5>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1 lg:gap-2">
                         {exp.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 bg-white/[0.05] text-muted text-xs rounded-lg border border-white/[0.05] hover:text-light hover:border-theme/30 transition-all duration-200"
+                            className="px-2 lg:px-3 py-1 bg-white/[0.05] text-muted text-xs rounded-lg border border-white/[0.05] hover:text-light hover:border-theme/30 transition-all duration-200"
                           >
                             {tech}
                           </span>
@@ -262,7 +262,7 @@ export default function Work() {
         {/* Summary Stats */}
         <motion.div
           variants={itemVariants}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
+          className="mt-12 lg:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6"
         >
           {[
             { label: "Years Experience", value: "3+", desc: "Professional Development" },
@@ -274,14 +274,15 @@ export default function Work() {
               key={stat.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -2 }}
-              className="glass-card p-6 rounded-xl text-center hover:bg-white/[0.08] transition-all duration-200"
+              className="glass-card p-4 lg:p-6 rounded-xl text-center hover:bg-white/[0.08] transition-all duration-200"
             >
-              <div className="text-3xl font-bold gradient-text mb-2">
+              <div className="text-2xl lg:text-3xl font-bold gradient-text mb-1 lg:mb-2">
                 {stat.value}
               </div>
-              <div className="text-light text-sm font-medium mb-1">
+              <div className="text-light text-xs lg:text-sm font-medium mb-1">
                 {stat.label}
               </div>
               <div className="text-muted text-xs">

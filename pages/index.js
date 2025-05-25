@@ -10,14 +10,15 @@ import Work from "../components/Work";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="min-h-screen w-full">
       <Head>
         <title>Sandepten</title>
         <meta name="description" content="Sandeep's portfolio" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Navbar />
-      <div className="px-6 xs:px-12 md:px-24 xl:px-36 2xl:mx-auto 2xl:w-3/5 2xl:px-0">
+      <div className="w-full px-6 xs:px-8 md:px-12 lg:px-16 xl:px-20 2xl:max-w-7xl 2xl:mx-auto">
         <Dashboard />
         <About />
         <Work />

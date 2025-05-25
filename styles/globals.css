@@ -5,17 +5,21 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply max-w-full overflow-x-hidden bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 font-sans text-light;
-  }
-
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply max-w-full overflow-x-hidden bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 font-sans text-light;
+    width: 100%;
+    min-height: 100vh;
   }
 
   * {
     scrollbar-width: thin;
     scrollbar-color: #4f46e5 #0f172a;
+    box-sizing: border-box;
   }
 
   *::-webkit-scrollbar {
@@ -33,6 +37,12 @@
 
   *::-webkit-scrollbar-thumb:hover {
     background: #7c3aed;
+  }
+
+  /* Prevent horizontal scroll on mobile */
+  #__next {
+    overflow-x: hidden;
+    width: 100%;
   }
 }
 

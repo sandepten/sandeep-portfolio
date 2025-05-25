@@ -98,25 +98,25 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="mt-32">
+    <section id="skills" className="mt-16 lg:mt-32">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        className="text-center mb-16"
+        viewport={{ once: true, amount: 0.1 }}
+        className="text-center mb-12 lg:mb-16 px-4"
       >
-        <motion.div variants={itemVariants} className="mb-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium mb-6">
+        <motion.div variants={itemVariants} className="mb-4 lg:mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium mb-4 lg:mb-6">
             <Sparkle className="text-theme animate-pulse" size={16} />
             Technical Expertise
           </div>
         </motion.div>
 
-        <motion.h3 variants={itemVariants} className="text-3xl md:text-4xl font-bold mb-6">
+        <motion.h3 variants={itemVariants} className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
           <span className="gradient-text">Skills & Technologies</span>
         </motion.h3>
-        <motion.p variants={itemVariants} className="text-lg text-muted max-w-2xl mx-auto">
+        <motion.p variants={itemVariants} className="text-base lg:text-lg text-muted max-w-2xl mx-auto px-4">
           A comprehensive toolkit spanning full-stack development, DevOps automation,
           and cloud infrastructure with hands-on experience in enterprise environments
         </motion.p>
@@ -124,10 +124,10 @@ export default function Skills() {
 
       {/* Interactive Category Tabs */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        className="flex flex-wrap justify-center gap-4 mb-16"
+        viewport={{ once: true, amount: 0.3 }}
+        className="flex flex-wrap justify-center gap-2 lg:gap-4 mb-12 lg:mb-16 px-4"
       >
         {skillCategories.map((category, index) => (
           <motion.button
@@ -135,14 +135,16 @@ export default function Skills() {
             onClick={() => setActiveCategory(index)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className={`flex items-center gap-3 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+            className={`flex items-center gap-2 lg:gap-3 px-4 lg:px-6 py-2 lg:py-3 rounded-lg lg:rounded-xl font-medium transition-all duration-300 text-sm lg:text-base ${
               activeCategory === index
                 ? `bg-gradient-to-r ${category.color} text-white shadow-lg`
                 : 'glass-card text-muted hover:text-light hover:bg-white/10'
             }`}
           >
-            <div className={`p-2 rounded-lg ${activeCategory === index ? 'bg-white/20' : `bg-gradient-to-r ${category.color}`}`}>
-              {category.icon}
+            <div className={`p-1 lg:p-2 rounded-lg ${activeCategory === index ? 'bg-white/20' : `bg-gradient-to-r ${category.color}`}`}>
+              <div className="scale-75 lg:scale-100">
+                {category.icon}
+              </div>
             </div>
             <span className="hidden sm:block">{category.title}</span>
           </motion.button>
@@ -152,26 +154,26 @@ export default function Skills() {
       {/* Active Category Skills Display */}
       <motion.div
         key={activeCategory}
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="mb-16"
+        transition={{ duration: 0.4 }}
+        className="mb-12 lg:mb-16 px-4"
       >
-        <div className={`glass-card p-8 rounded-3xl relative overflow-hidden`}>
+        <div className={`glass-card p-6 lg:p-8 rounded-2xl lg:rounded-3xl relative overflow-hidden`}>
           {/* Background Gradient */}
           <div className={`absolute inset-0 bg-gradient-to-br ${skillCategories[activeCategory].gradient} opacity-50`}></div>
 
           <div className="relative z-10">
-            <div className="text-center mb-8">
-              <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${skillCategories[activeCategory].color} mb-4`}>
+            <div className="text-center mb-6 lg:mb-8">
+              <div className={`inline-flex p-3 lg:p-4 rounded-xl lg:rounded-2xl bg-gradient-to-r ${skillCategories[activeCategory].color} mb-3 lg:mb-4`}>
                 {skillCategories[activeCategory].icon}
               </div>
-              <h4 className="text-2xl font-bold text-light mb-2">
+              <h4 className="text-xl lg:text-2xl font-bold text-light mb-2">
                 {skillCategories[activeCategory].title}
               </h4>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 lg:gap-6">
               {skillCategories[activeCategory].skills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
@@ -179,12 +181,12 @@ export default function Skills() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="glass-card p-6 rounded-2xl group hover:shadow-xl transition-all duration-300"
+                  className="glass-card p-4 lg:p-6 rounded-xl lg:rounded-2xl group hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl">{skill.icon}</span>
-                    <div className="flex-1">
-                      <h5 className="font-semibold text-light group-hover:text-theme transition-colors duration-300">
+                  <div className="flex items-center gap-2 lg:gap-3">
+                    <span className="text-xl lg:text-3xl">{skill.icon}</span>
+                    <div className="flex-1 min-w-0">
+                      <h5 className="text-sm lg:text-base font-semibold text-light group-hover:text-theme transition-colors duration-300 truncate">
                         {skill.name}
                       </h5>
                     </div>
@@ -198,32 +200,32 @@ export default function Skills() {
 
       {/* Additional Technologies Grid */}
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        className="grid md:grid-cols-2 gap-8"
+        viewport={{ once: true, amount: 0.2 }}
+        className="grid md:grid-cols-2 gap-6 lg:gap-8 px-4"
       >
         {/* Databases */}
-        <div className="glass-card p-8 rounded-2xl group hover:shadow-xl transition-all duration-300">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-3 rounded-xl bg-gradient-to-r from-violet-600 to-purple-600">
-              <Database size={24} />
+        <div className="glass-card p-6 lg:p-8 rounded-xl lg:rounded-2xl group hover:shadow-xl transition-all duration-300">
+          <div className="flex items-center gap-3 mb-4 lg:mb-6">
+            <div className="p-2 lg:p-3 rounded-lg lg:rounded-xl bg-gradient-to-r from-violet-600 to-purple-600">
+              <Database size={20} className="lg:w-6 lg:h-6" />
             </div>
-            <h4 className="text-xl font-bold text-light">Databases</h4>
+            <h4 className="text-lg lg:text-xl font-bold text-light">Databases</h4>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-2 lg:gap-4">
             {["PostgreSQL", "MongoDB", "MySQL", "Redis", "DynamoDB", "Elasticsearch"].map((db, index) => (
               <motion.div
                 key={db}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.5 }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center gap-2 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-200"
+                className="flex items-center gap-2 p-2 lg:p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-200"
               >
-                <div className="w-2 h-2 rounded-full bg-gradient-to-r from-violet-600 to-purple-600"></div>
-                <span className="text-sm font-medium text-muted group-hover:text-light transition-colors duration-200">
+                <div className="w-2 h-2 rounded-full bg-gradient-to-r from-violet-600 to-purple-600 flex-shrink-0"></div>
+                <span className="text-xs lg:text-sm font-medium text-muted group-hover:text-light transition-colors duration-200 truncate">
                   {db}
                 </span>
               </motion.div>
@@ -232,26 +234,26 @@ export default function Skills() {
         </div>
 
         {/* Tools & Testing */}
-        <div className="glass-card p-8 rounded-2xl group hover:shadow-xl transition-all duration-300">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-3 rounded-xl bg-gradient-to-r from-slate-600 to-gray-600">
-              <Lightning size={24} />
+        <div className="glass-card p-6 lg:p-8 rounded-xl lg:rounded-2xl group hover:shadow-xl transition-all duration-300">
+          <div className="flex items-center gap-3 mb-4 lg:mb-6">
+            <div className="p-2 lg:p-3 rounded-lg lg:rounded-xl bg-gradient-to-r from-slate-600 to-gray-600">
+              <Lightning size={20} className="lg:w-6 lg:h-6" />
             </div>
-            <h4 className="text-xl font-bold text-light">Tools & Testing</h4>
+            <h4 className="text-lg lg:text-xl font-bold text-light">Tools & Testing</h4>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-2 lg:gap-4">
             {["Git", "Cypress", "Jest", "Playwright", "Linux", "Bash"].map((tool, index) => (
               <motion.div
                 key={tool}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.5 }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center gap-2 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-200"
+                className="flex items-center gap-2 p-2 lg:p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-200"
               >
-                <div className="w-2 h-2 rounded-full bg-gradient-to-r from-slate-600 to-gray-600"></div>
-                <span className="text-sm font-medium text-muted group-hover:text-light transition-colors duration-200">
+                <div className="w-2 h-2 rounded-full bg-gradient-to-r from-slate-600 to-gray-600 flex-shrink-0"></div>
+                <span className="text-xs lg:text-sm font-medium text-muted group-hover:text-light transition-colors duration-200 truncate">
                   {tool}
                 </span>
               </motion.div>

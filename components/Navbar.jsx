@@ -14,6 +14,25 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close menu when clicking outside or on escape
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') setDropdown(false);
+    };
+
+    if (dropdown) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [dropdown]);
+
   const navItems = [
     { name: "About", target: "about" },
     { name: "Skills", target: "skills" },
@@ -129,7 +148,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setDropdown(!dropdown)}
-              className="p-3 rounded-xl glass-card hover:bg-white/10 transition-all duration-300 border border-white/10"
+              className="p-3 rounded-xl glass-card hover:bg-white/10 transition-all duration-300 border border-white/10 relative z-[60]"
             >
               <AnimatePresence mode="wait">
                 {dropdown ? (
@@ -168,7 +187,7 @@ const Navbar = () => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
                 onClick={() => setDropdown(false)}
-                className="fixed inset-0 bg-black/70 backdrop-blur-sm z-40"
+                className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40"
               />
 
               <motion.div
@@ -176,14 +195,26 @@ const Navbar = () => {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: "100%", opacity: 0 }}
                 transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                className="fixed right-0 top-0 h-full w-4/5 max-w-sm bg-slate-950/98 backdrop-blur-xl border-l border-white/10 z-50 shadow-2xl"
+                className="fixed right-0 top-0 h-full w-80 bg-slate-950/98 backdrop-blur-xl border-l border-white/10 z-50 shadow-2xl"
               >
-                <div className="flex flex-col justify-center h-full">
+                {/* Close button inside menu */}
+                <div className="flex justify-end p-6">
+                  <motion.button
+                    onClick={() => setDropdown(false)}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="p-2 rounded-lg hover:bg-white/10 transition-colors duration-200"
+                  >
+                    <X size={24} className="text-light" />
+                  </motion.button>
+                </div>
+
+                <div className="flex flex-col justify-center h-full px-8 -mt-20">
                   <motion.ul
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2, staggerChildren: 0.1 }}
-                    className="space-y-2 px-8"
+                    className="space-y-2"
                   >
                     {navItems.map((item, index) => (
                       <motion.li
