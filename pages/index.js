@@ -7,10 +7,12 @@ import MainProjects from "../components/MainProjects";
 import Navbar from "../components/Navbar";
 import OtherProjects from "../components/OtherProjects";
 import Work from "../components/Work";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function Home() {
   return (
     <div className="min-h-screen w-full">
+      <Analytics />
       <Head>
         <title>Sandepten</title>
         <meta name="description" content="Sandeep's portfolio" />
